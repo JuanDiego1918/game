@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AnswerButton extends StatelessWidget {
+
   final bool _answer;
   final VoidCallback _onTap;
 
@@ -8,26 +9,21 @@ class AnswerButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Material(
+    return new Expanded( // true button
+      child: new Material(
         color: _answer == true ? Colors.greenAccent : Colors.redAccent,
-        child: InkWell(
-          onTap: () => _onTap,
-          child: Center(
-            child: Container(
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.white,width: 50.0)
+        child: new InkWell(
+          onTap: () => _onTap(),
+          child: new Center(
+            child: new Container(
+              decoration: new BoxDecoration(
+                border: new Border.all(color: Colors.white, width: 5.0)
               ),
-              padding: EdgeInsets.all(20.0),
-              child: Text(
-                _answer == true ? "True" : "False",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 40.0,
-                    fontWeight: FontWeight.bold,
-                    fontStyle: FontStyle.italic),
+              padding: new EdgeInsets.all(20.0),
+              child: new Text(_answer == true ? "True" : "False",
+                style: new TextStyle(color: Colors.white, fontSize: 40.0, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic)
               ),
-            ),
+            )
           ),
         ),
       ),
